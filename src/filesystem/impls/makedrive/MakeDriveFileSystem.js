@@ -11,7 +11,7 @@ define(function (require, exports, module) {
         // TODO: we have to figure out how we're going to build/deploy makedrive.js, this is hacky.
         // since it requires a manual `grunt build` step in src/thirdparty/makedrive
         MakeDrive       = require("thirdparty/makedrive/client/dist/makedrive"),
-        OpenDialog      = require("filesystem/impls/makedrive/open-dialog");
+        Dialog          = require("thirdparty/filer-dialogs/filer-dialogs");
 
     var fs              = MakeDrive.fs(),
         Path            = MakeDrive.Path,
@@ -43,20 +43,11 @@ define(function (require, exports, module) {
     });
 
     function showOpenDialog(allowMultipleSelection, chooseDirectories, title, initialPath, fileTypes, callback) {
-        OpenDialog.showOpenDialog.apply(null, arguments);
+        Dialog.showOpenDialog.apply(null, arguments);
     }
 
     function showSaveDialog(title, initialPath, defaultName, callback) {
-        var selectedPath;
-        var saveResponse = window.prompt(title, defaultName);
-        if(saveResponse){
-            initialPath = initialPath || '/';
-            selectedPath = initialPath + saveResponse;
-            callback(null, selectedPath);
-        }
-        else{
-            callback();
-        }
+        Dialog.showSaveAsDialog.apply(null, arguments);
     }
 
     /**
