@@ -50,10 +50,12 @@
     "devDependencies": {
         "bluebird": "3.2.2",
         "http-server": "^0.8.0",
+        "jsdom": "^8.1.0",
         "mkdirp": "0.5.1",
         "nunjucks": "2.3.0",
         "properties-parser": "0.3.1",
-        "requirejs": "2.1.22"
+        "requirejs": "2.1.22",
+        "request-promise": "^2.0.1"
     },
     "scripts": {
         "localize": "node scripts/properties2js",
