@@ -46,11 +46,6 @@ define(function() {
         }
     }
 
-    function getInt(storage, property) {
-        var str = getString(storage, property);
-        return str|0;
-    }
-
     function StateManager(disableStorage) {
         var storage;
         if(disableStorage) {
@@ -75,15 +70,15 @@ define(function() {
                 set: function(v) { storage.setItem(prefix("sidebarVisible"), v); }
             },
             sidebarWidth: {
-                get: function()  { return getInt(storage, "sidebarWidth"); },
+                get: function()  { return getString(storage, "sidebarWidth"); },
                 set: function(v) { storage.setItem(prefix("sidebarWidth"), v); }
             },
             firstPaneWidth: {
-                get: function()  { return getInt(storage, "firstPaneWidth");  },
+                get: function()  { return getString(storage, "firstPaneWidth");  },
                 set: function(v) { storage.setItem(prefix("firstPaneWidth"), v); }
             },
             secondPaneWidth: {
-                get: function()  { return getInt(storage, "secondPaneWidth"); },
+                get: function()  { return getString(storage, "secondPaneWidth"); },
                 set: function(v) { storage.setItem(prefix("secondPaneWidth"), v); }
             },
             previewMode: {

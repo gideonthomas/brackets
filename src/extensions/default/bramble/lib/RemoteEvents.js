@@ -26,9 +26,9 @@ define(function (require, exports, module) {
 
         sendEvent({
             type: "bramble:layout",
-            sidebarWidth: $sidebar.is(":visible") ? $sidebar.width() : 0,
-            firstPaneWidth: $firstPane ? $firstPane.width() : 0,
-            secondPaneWidth: $secondPane ? $secondPane.width() : 0
+            sidebarWidth: $sidebar.is(":visible") ? $sidebar.css("width") : "0px",
+            firstPaneWidth: $firstPane ? $firstPane.css("width") : "0px",
+            secondPaneWidth: $secondPane ? $secondPane.css("width") : "0px"
         });
     }
 
@@ -142,9 +142,9 @@ define(function (require, exports, module) {
         sendEvent({
             type: "bramble:loaded",
             sidebarVisible: $sidebar.is(":visible"),
-            sidebarWidth: $sidebar.is(":visible") ? $sidebar.width() : 0,
-            firstPaneWidth: $firstPane ? $firstPane.width() : 0,
-            secondPaneWidth: $secondPane ? $secondPane.width() : 0,
+            sidebarWidth: $sidebar.is(":visible") ? $sidebar.css("width") : "0px",
+            firstPaneWidth: $firstPane ? $firstPane.css("width") : "0px",
+            secondPaneWidth: $secondPane ? $secondPane.css("width") : "0px",
             fullPath: fullPath,
             filename: filename,
             previewMode: UI.getPreviewMode(),
