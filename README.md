@@ -305,6 +305,7 @@ a number of read-only getters are available in order to access state information
 * `getTheme()` - returns the name of the current theme.
 * `getFontSize()` - returns the current font size as a string (e.g., `"12px"`).
 * `getWordWrap()` - returns the current word wrap setting as a `Boolean` (i.e., enabled or disabled).
+* `getAutoCloseTags()` - returns the current close tags setting as a `Boolean` (i.e., enabled or disabled).
 * `getTutorialExists()` - returns `true` or `false` depending on whether or not there is a tutorial in the project (i.e., if `tutorial.html` is present)
 * `getTutorialVisible()` - returns `true` or `false` depending on whether or not the preview browser is showing a tutorial or not.
 
@@ -349,6 +350,8 @@ to be notified when the action completes:
 * `disableInspector([callback])` - turns off the preview inspector (default)
 * `enableWordWrap([callback])` - turns on word wrap for the editor (default)
 * `disableWordWrap([callback])` - turns off word wrap for the editor
+* `enableAutoCloseTags([callback])` - turns on close tags for the editor (default)
+* `disableAutoCloseTags([callback])` - turns off close tags for the editor
 * `showTutorial([callback])` - shows tutorial (i.e., tutorial.html) vs editor contents in preview
 * `hideTutorial([callback])` - stops showing tutorial (i.e., tutorial.html) and uses editor contents in preview
 * `showUploadFilesDialog([callback])` - shows the Upload Files dialog, allowing users to drag-and-drop, upload a file, or take a selfie.
@@ -369,6 +372,7 @@ the following events:
 * `"themeChange"` - triggered whenever the theme changes. It inclues an `Object` with a `theme` property that indicates the new theme
 * `"fontSizeChange"` - triggered whenever the font size changes. It includes an `Object` with a `fontSize` property that indicates the new size (e.g., `"12px"`).
 * `"wordWrapChange"` - triggered whenever the word wrap value changes. It includes an `Object` with a `wordWrap` property that indicates the new value (e.g., `true` or `false`).
+* `"autoCloseTagsChange"` - triggered whenever the close tag value changes. It includes an `Object` with a `autoCloseTags` property that indicates the new value (e.g., `true` or `false`).
 * `"tutorialAdded"` - triggered when a new tutorial is added to the project
 * `"tutorialRemoved"` - triggered when an existing tutorial for the project is removed
 * `"tutorialVisibilityChange"` - triggered when the tutorial preview is turned on or off. It includes an `Object` with a `visibility` property that indicates whether the tutorial is visible.

@@ -102,6 +102,10 @@ define(function() {
                 get: function()  { return getBool(storage, "wordWrap"); },
                 set: function(v) { storage.setItem(prefix("wordWrap"), v); }
             },
+            autoCloseTags: {
+                get: function()  { return getBool(storage, "closeTags"); },
+                set: function(v) { storage.setItem(prefix("closeTags"), v); }
+            },
             allowJavaScript: {
                 get: function()  { return getBool(storage, "allowJavaScript"); },
                 set: function(v) { storage.setItem(prefix("allowJavaScript"), v); }

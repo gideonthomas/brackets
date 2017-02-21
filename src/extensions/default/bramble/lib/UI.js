@@ -89,6 +89,11 @@ define(function (require, exports, module) {
         if(typeof wordWrap === "boolean") {
             PreferencesManager.set("wordWrap", wordWrap);
         }
+		
+        var autoCloseTags = BrambleStartupState.ui("autoCloseTags");
+        if(typeof autoCloseTags === "boolean") {
+            PreferencesManager.set("closeTags", autoCloseTags);
+        }
 
         var allowJavaScript = BrambleStartupState.ui("allowJavaScript");
         if(typeof allowJavaScript === "boolean") {

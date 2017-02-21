@@ -97,6 +97,7 @@ define(function (require, exports, module) {
         USE_TAB_CHAR        = "useTabChar",
         WORD_WRAP           = "wordWrap",
         INDENT_LINE_COMMENT  = "indentLineComment",
+		AUTO_CLOSE_TAGS = "closeTags",
         ALLOW_JAVASCRIPT    = "allowJavaScript";
     
 
@@ -129,6 +130,7 @@ define(function (require, exports, module) {
     cmOptions[USE_TAB_CHAR]       = "indentWithTabs";
     cmOptions[WORD_WRAP]          = "lineWrapping";
     cmOptions[ALLOW_JAVASCRIPT]   = "allowJavaScript";
+	cmOptions[AUTO_CLOSE_TAGS]   = "autoCloseTags";
 
     PreferencesManager.definePreference(CLOSE_BRACKETS,     "boolean", true, {
         description: Strings.DESCRIPTION_CLOSE_BRACKETS

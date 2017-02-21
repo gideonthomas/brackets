@@ -204,6 +204,7 @@ define([
         self.getSidebarVisible = function() { return _state.sidebarVisible; };
         self.getRootDir = function() { return _root; };
         self.getWordWrap = function() { return _state.wordWrap; };
+        self.getAutoCloseTags = function() { return _state.autoCloseTags; };
         self.getAllowJavaScript = function() { return _state.allowJavaScript; };
         self.getTutorialExists = function() { return _tutorialExists; };
         self.getTutorialVisible = function() { return _tutorialVisible; };
@@ -263,6 +264,7 @@ define([
                     _state.previewMode = data.previewMode;
                     _state.theme = data.theme;
                     _state.wordWrap = data.wordWrap;
+                    _state.autoCloseTags = data.autoCloseTags;
                     _state.allowJavaScript = data.allowJavaScript;
 
                     setReadyState(Bramble.READY);
@@ -299,6 +301,8 @@ define([
                         _state.sidebarVisible = data.visible;
                     } else if (eventName === "wordWrapChange") {
                         _state.wordWrap = data.wordWrap;
+                    } else if (eventName === "autoCloseTagsChange") {
+                        _state.autoCloseTags = data.autoCloseTags;
                     } else if (eventName === "allowJavaScriptChange") {
                         _state.allowJavaScript = data.allowJavaScript;
                     } else if (eventName === "tutorialVisibilityChange") {
@@ -417,6 +421,7 @@ define([
                                     secondPaneWidth: _state.secondPaneWidth,
                                     previewMode: _state.previewMode,
                                     wordWrap: _state.wordWrap,
+                                    autoCloseTags: _state.autoCloseTags,
                                     allowJavaScript: _state.allowJavaScript
                                 }
                             };
@@ -913,6 +918,14 @@ define([
 
     BrambleProxy.prototype.disableWordWrap = function(callback) {
         this._executeRemoteCommand({commandCategory: "bramble", command: "BRAMBLE_DISABLE_WORD_WRAP"}, callback);
+    };
+	
+    BrambleProxy.prototype.enableAutoCloseTags = function(callback) {
+        this._executeRemoteCommand({commandCategory: "bramble", command: "BRAMBLE_ENABLE_AUTO_CLOSE_TAGS"}, callback);
+    };
+
+    BrambleProxy.prototype.disableAutoCloseTags = function(callback) {
+        this._executeRemoteCommand({commandCategory: "bramble", command: "BRAMBLE_DISABLE_AUTO_CLOSE_TAGS"}, callback);
     };
 
     BrambleProxy.prototype.showTutorial = function(callback) {

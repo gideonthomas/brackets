@@ -191,6 +191,7 @@ define(function (require, exports, module) {
             secondPaneWidth: data.state.secondPaneWidth,
             previewMode: data.state.previewMode,
             wordWrap: data.state.wordWrap,
+            autoCloseTags: data.state.autoCloseTags,
             allowJavaScript: data.state.allowJavaScript
         });
 
