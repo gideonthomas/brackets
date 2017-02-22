@@ -919,13 +919,9 @@ define([
     BrambleProxy.prototype.disableWordWrap = function(callback) {
         this._executeRemoteCommand({commandCategory: "bramble", command: "BRAMBLE_DISABLE_WORD_WRAP"}, callback);
     };
-	
-    BrambleProxy.prototype.enableAutoCloseTags = function(callback) {
-        this._executeRemoteCommand({commandCategory: "bramble", command: "BRAMBLE_ENABLE_AUTO_CLOSE_TAGS"}, callback);
-    };
 
-    BrambleProxy.prototype.disableAutoCloseTags = function(callback) {
-        this._executeRemoteCommand({commandCategory: "bramble", command: "BRAMBLE_DISABLE_AUTO_CLOSE_TAGS"}, callback);
+    BrambleProxy.prototype.configureAutoCloseTags = function(options, callback) {
+        this._executeRemoteCommand({commandCategory: "bramble", command: "BRAMBLE_CONFIGURE_AUTO_CLOSE_TAGS", args: [ options ]}, callback);
     };
 
     BrambleProxy.prototype.showTutorial = function(callback) {
@@ -961,7 +957,7 @@ define([
     BrambleProxy.prototype.export = function(callback) {
         this._executeRemoteCommand({commandCategory: "bramble", command: "BRAMBLE_EXPORT"}, callback);
     };
-	
+
     BrambleProxy.prototype.addCodeSnippet = function(options, callback) {
         this._executeRemoteCommand({
             commandCategory: "bramble",

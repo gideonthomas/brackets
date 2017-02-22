@@ -51,6 +51,19 @@ define(function() {
         return str|0;
     }
 
+    function getObject(storage, property) {
+        var objStr = getString(storage, property);
+        var obj = null;
+
+        try {
+            obj = JSON.parse(objStr);
+        } catch(e) {
+            console.error("Failed to parse object from localStorage item " + prefix(property) + " with: ", e);
+        }
+
+        return obj;
+    }
+
     function StateManager(disableStorage) {
         var storage;
         if(disableStorage) {
@@ -103,8 +116,8 @@ define(function() {
                 set: function(v) { storage.setItem(prefix("wordWrap"), v); }
             },
             autoCloseTags: {
-                get: function()  { return getBool(storage, "closeTags"); },
-                set: function(v) { storage.setItem(prefix("closeTags"), v); }
+                get: function()  { return getObject(storage, "closeTags"); },
+                set: function(v) { storage.setItem(prefix("closeTags"), JSON.stringify(v)); }
             },
             allowJavaScript: {
                 get: function()  { return getBool(storage, "allowJavaScript"); },

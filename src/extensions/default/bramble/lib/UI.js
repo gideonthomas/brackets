@@ -89,9 +89,9 @@ define(function (require, exports, module) {
         if(typeof wordWrap === "boolean") {
             PreferencesManager.set("wordWrap", wordWrap);
         }
-		
+
         var autoCloseTags = BrambleStartupState.ui("autoCloseTags");
-        if(typeof autoCloseTags === "boolean") {
+        if(typeof autoCloseTags === "object") {
             PreferencesManager.set("closeTags", autoCloseTags);
         }
 
@@ -116,11 +116,11 @@ define(function (require, exports, module) {
 
         var secondPaneWidth = BrambleStartupState.ui("secondPaneWidth");
         var firstPaneWidth = BrambleStartupState.ui("firstPaneWidth");
-                         
+
         firstPaneWidth = firstPaneWidth * 100 / (
                          ((firstPaneWidth)? firstPaneWidth : 0) +
                          ((secondPaneWidth)? secondPaneWidth : 0)); // calculate width in %
-        
+
         if(firstPaneWidth) {
             $("#first-pane").width((firstPaneWidth + "%"));
         }

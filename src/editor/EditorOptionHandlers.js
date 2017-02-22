@@ -36,7 +36,6 @@ define(function (require, exports, module) {
     var SHOW_LINE_NUMBERS = "showLineNumbers",
         STYLE_ACTIVE_LINE = "styleActiveLine",
         WORD_WRAP         = "wordWrap",
-        AUTO_CLOSE_TAGS   = "closeTags",
         ALLOW_JAVASCRIPT  = "allowJavaScript",
         CLOSE_BRACKETS    = "closeBrackets";
 
@@ -49,7 +48,6 @@ define(function (require, exports, module) {
     _optionMapping[SHOW_LINE_NUMBERS] = Commands.TOGGLE_LINE_NUMBERS;
     _optionMapping[STYLE_ACTIVE_LINE] = Commands.TOGGLE_ACTIVE_LINE;
     _optionMapping[WORD_WRAP] = Commands.TOGGLE_WORD_WRAP;
-    _optionMapping[AUTO_CLOSE_TAGS] = Commands.TOGGLE_AUTO_CLOSE_TAGS;
     _optionMapping[ALLOW_JAVASCRIPT] = Commands.TOGGLE_ALLOW_JAVASCRIPT;
     _optionMapping[CLOSE_BRACKETS] = Commands.TOGGLE_CLOSE_BRACKETS;
 
@@ -104,7 +102,6 @@ define(function (require, exports, module) {
 
     // XXXBramble
     CommandManager.registerInternal(Commands.TOGGLE_ALLOW_JAVASCRIPT, _getToggler(ALLOW_JAVASCRIPT));
-    CommandManager.registerInternal(Commands.TOGGLE_AUTO_CLOSE_TAGS, _getToggler(AUTO_CLOSE_TAGS));
 
     AppInit.htmlReady(_init);
 });

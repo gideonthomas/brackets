@@ -130,11 +130,8 @@ define(function (require, exports, module) {
         case "BRAMBLE_DISABLE_WORD_WRAP":
             PreferencesManager.set("wordWrap", false);
             break;
-        case "BRAMBLE_ENABLE_AUTO_CLOSE_TAGS":
-            PreferencesManager.set("closeTags", true);
-            break;
-        case "BRAMBLE_DISABLE_AUTO_CLOSE_TAGS":
-            PreferencesManager.set("closeTags", false);
+        case "BRAMBLE_CONFIGURE_AUTO_CLOSE_TAGS":
+            PreferencesManager.set("closeTags", args[0]);
             break;
         case "BRAMBLE_SHOW_TUTORIAL":
             Tutorial.setOverride(true);

@@ -110,7 +110,6 @@ define(function (require, exports, module) {
     exports.TOGGLE_LINE_NUMBERS         = "view.toggleLineNumbers";     // EditorOptionHandlers.js      _getToggler()
     exports.TOGGLE_ACTIVE_LINE          = "view.toggleActiveLine";      // EditorOptionHandlers.js      _getToggler()
     exports.TOGGLE_WORD_WRAP            = "view.toggleWordWrap";        // EditorOptionHandlers.js      _getToggler()
-    exports.TOGGLE_AUTO_CLOSE_TAGS      = "cmd.toggleAutoCloseTags";    // EditorOptionHandlers.js      _getToggler()
     exports.TOGGLE_ALLOW_JAVASCRIPT     = "cmd.toggleAllowJavaScript";  // EditorOptionsHandlers.js     _getToggler()
 
     exports.CMD_OPEN                        = "cmd.open";
