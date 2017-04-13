@@ -17,7 +17,6 @@ Thumbs.db
 /src/thirdparty/less.min.js
 
 # ignore compiled files
-/dist
 /src/.index.html
 /src/styles/brackets.min.css
 /src/styles/brackets.min.css.map

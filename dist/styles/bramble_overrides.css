@@ -1,0 +1,137 @@
+/* Menu item goes to next line due to float:right issue on Firefox */
+@-moz-document url-prefix() {
+    .context-menu .menu-shortcut {
+        float: none;
+        margin-left: auto;
+    }
+    .dropdown-menu li a {
+        display: flex;
+        flex-flow: space-between;
+    }
+}
+
+.image-view-swatches {
+    margin-top: 10px;
+    overflow: auto;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+}
+
+.swatch-wrapper {
+    float: left;
+    margin: 0 10px 10px 0;
+    min-width: 110px;
+    text-align: left;
+}
+
+.image-view-swatch {
+    display: block;
+    float: left;
+    height: 25px;
+    width: 25px;
+    border-radius: 1px;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    transition: .2s;
+    margin-right: 10px;
+}
+
+.image-view-hex {
+    font-size: 15px;
+    text-transform: uppercase;
+    position: relative;
+    top: 4px;
+    cursor: text;
+    opacity: .6;
+}
+
+.image-header {
+    height: auto !important;
+}
+
+.fullscreen-preview #first-pane {
+    width: 0 !important;
+}
+
+.fullscreen-preview .main-view .content {
+    left: 0 !important;
+}
+
+.bramble-inspector-highlight {
+    background: rgba(0, 135, 207, .3) !important;
+}
+
+table.guide {
+    width: 100%;
+}
+
+table.guide td{
+    text-align: center;
+    padding-bottom:20px;
+}
+
+.model-header {
+    padding-left:20px;
+}
+
+.model-text {
+    padding-left:20px;
+}
+
+span.dialog-button {
+    float: right;
+    padding-right: 10px;
+}
+
+.CodeMirror-lines {
+    padding-left: 10px;
+}
+
+.CodeMirror .CodeMirror-gutters .CodeMirror-gutter:after {
+    display: none;
+}
+
+.CodeMirror-linenumber {
+    padding: 0 10px;
+}
+
+.inline-widget .CodeMirror-foldgutter,
+.inline-widget .CodeMirror-linenumbers,
+.inline-widget .CodeMirror-gutters {
+    background: transparent !important;
+}
+
+/* Makes the resize handles wider, and visile on hover & drag */
+
+#sidebar {
+    position: relative;
+}
+
+.CodeMirror-foldgutter:after {
+    display: none;
+}
+
+.horz-resizer {
+    transition: opacity .15s ease-out;
+    background: rgba(0,0,0,.08);
+    width: 12px;
+}
+
+#sidebar .horz-resizer {
+    right: -12px !important;
+    left: auto !important;
+}
+
+.dark .main-view > .horz-resizer,
+.dark #sidebar .horz-resizer {
+    background: rgba(255,255,255,.1);
+}
+
+.horz-resizer.active,
+.horz-resizer:hover {
+    opacity: 1;
+}
