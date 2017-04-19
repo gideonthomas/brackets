@@ -111,7 +111,7 @@ define(function (require, exports, module) {
         this.$imageScale = this.$el.find(".image-scale");
         this.$imagePreview.on("load", _.bind(this._onImageLoaded, this));
 
-        Image.load(this.$imagePreview[0]);
+        Image.load(this.$imagePreview[0], file.fullPath);
 
         _viewers[file.fullPath] = this;
     }
